@@ -43,9 +43,9 @@ The followings are the scope for this case study:
 * SELECT, FROM, WHERE, GROUP BY, HAVING & ORDER BY statements
 * ALTER statement
 * UPDATE statement
-* Function: REPLACE, DECLARE, DATETIME, YEAR, MONTH, TOP
+* Function: REPLACE, DECLARE, CAST, YEAR, MONTH, TOP
 * Aggregate functions - SUM, COUNT, MAX, MIN etc.
-* Limit & offset
+* OFFSET-FETCH
 
 
 ## Methodology
