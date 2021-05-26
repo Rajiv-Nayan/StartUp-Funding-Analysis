@@ -64,7 +64,9 @@ The followings are the scope for this case study:
  ORDER BY Total_Amount DESC
 
 ```
+<p align="center">
 ![image](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_1_Graph.png)
+</p>
 
 ## Goal_Statement_2
 ### The pattern of fundings does start up generally gets in India<br>
