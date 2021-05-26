@@ -65,7 +65,7 @@ The followings are the scope for this case study:
 
 ```
 <p align="center">
-  <img width="460" height="300" src="https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_1_Graph.png">
+  <img src="https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_1_Graph.png">
 </p>
 
 ## Goal_Statement_2
