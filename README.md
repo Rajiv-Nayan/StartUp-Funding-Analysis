@@ -61,7 +61,8 @@ The followings are the scope for this case study:
  FROM dbo.startup_funding
  WHERE City_Location NOT IN (Select * from @tablevariable)
  GROUP BY Investors_Name having Investors_Name not in ('NULL')
- ORDER BY Total_Amount DESC
+ ORDER BY Total_Amount DESC;
+ GO
 
 ```
 <p align="center">
@@ -71,11 +72,11 @@ The followings are the scope for this case study:
 ## Goal_Statement_2
 ### The pattern of fundings does start up generally gets in India<br>
 ``` JS
-SELECT InvestmentType,COUNT(InvestmentType) AS Total_Investment 
+SELECT top(5) InvestmentType,COUNT(InvestmentType) AS Total_Investment 
 FROM [dbo].[startup_funding]
 GROUP BY InvestmentType 
 ORDER BY Total_Investment DESC;
-go
+GO
 ```
 <p align="center">
   <img src="https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_2_Graph.png">
@@ -85,11 +86,11 @@ go
 ## Goal_Statement_3
 ### Various sectors or industries which are more favoured by investors for funding<br>
 ``` JS
-SELECT  Industry_Vertical, COUNT(*) as Frequency
+SELECT  Top(5) Industry_Vertical, COUNT(*) as Frequency
 FROM [dbo].[startup_funding]
-GROUP BY Industry_Vertical 
-ORDER BY Frequency DESC
-Go
+GROUP BY Industry_Vertical having Industry_Vertical is not null 
+ORDER BY Frequency DESC;
+GO
 ```
 <p align="center">
   <img src="https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_3_Graph.png">
@@ -114,7 +115,7 @@ GO
 * **Yearwise**
 
 ``` JS
-SELECT YEAR(Date_yyyy_mm_dd) AS [Yearwise],  SUM(Amount_in_USD) AS Total_Amount 
+SELECT TOP (5) YEAR(Date_yyyy_mm_dd) AS [Yearwise],  SUM(Amount_in_USD) AS Total_Amount 
 FROM [dbo].[startup_funding]
 GROUP BY YEAR(Date_yyyy_mm_dd) 
 ORDER BY YEAR(Date_yyyy_mm_dd)
@@ -133,8 +134,8 @@ GO
   having InvestmentType like 'Angel%' and Investors_Name is not Null  
   order by Startup_InvestedIn desc
   offset 1 row
-  fetch next 5 rows only
-  go  
+  fetch next 5 rows only;
+  GO  
 ```
 <p align="center">
   <img src="https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_5_Graph.png">
@@ -147,7 +148,8 @@ GO
 	min(Amount_in_USD) as Min_Amount_in_USD 
 	from dbo.startup_funding 
 	where [City_Location] NOT IN (
-	Select location from @tablevariable)
+	Select location from @tablevariable);
+	GO
 ```
 <p align="center">
   <img src="https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_6_Graph.png">
