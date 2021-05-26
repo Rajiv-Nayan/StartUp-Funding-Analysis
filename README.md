@@ -55,7 +55,7 @@ The followings are the scope for this case study:
   * Check for all names of investors and rename duplicates if any ('undisclosed investor' to 'Undisclosed Investors')
 
 ## Goal_Statement_1
-###The important investor of the Indian ecosystem<br>
+### The important investor of the Indian ecosystem<br>
 ``` JS 
  SELECT TOP(5) Investors_Name,SUM(Amount_in_USD) AS Total_Amount
  FROM dbo.startup_funding
