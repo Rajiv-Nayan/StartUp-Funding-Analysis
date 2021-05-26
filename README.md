@@ -145,12 +145,12 @@ GO
 ## Goal_Statement_6
 ### Max and Min investment out of all start-ups in India <br>
 ``` JS
-  select max(Amount_in_USD) as Max_Amount_in_USD, 
-	min(Amount_in_USD) as Min_Amount_in_USD 
-	from dbo.startup_funding 
-	where [City_Location] NOT IN (
-	Select location from @tablevariable);
-	GO
+ select max(Amount_in_USD) as Max_Amount_in_USD, 
+ min(Amount_in_USD) as Min_Amount_in_USD 
+ from dbo.startup_funding 
+ where [City_Location] NOT IN (
+ Select location from @tablevariable);
+ GO
 ```
 <p align="center">
   <img src="https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_6_Graph.png">
