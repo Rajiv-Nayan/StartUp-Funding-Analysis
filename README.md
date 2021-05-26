@@ -55,7 +55,14 @@ The followings are the scope for this case study:
   * Check for all names of investors and rename duplicates if any ('undisclosed investor' to 'Undisclosed Investors')
 
 ## Goal_Statement_1
-```
+###The important investor of the Indian ecosystem<br>
+``` JS 
+ SELECT TOP(5) Investors_Name,SUM(Amount_in_USD) AS Total_Amount
+ FROM dbo.startup_funding
+ WHERE City_Location NOT IN (Select * from @tablevariable)
+ GROUP BY Investors_Name having Investors_Name not in ('NULL')
+ ORDER BY Total_Amount DESC
+
 ```
 ## Goal_Statement_2
 ### The pattern of fundings does start up generally gets in India<br>
@@ -66,7 +73,6 @@ GROUP BY InvestmentType
 ORDER BY Total_Investment DESC;
 go
 ```
-![Graph 2](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%202.jpg)
 
 ## Goal_Statement_3
 ### Various sectors or industries which are more favoured by investors for funding<br>
@@ -100,12 +106,26 @@ GO
 ```
 
 ## Goal_Statement_5
+### Angel Investors of India <br>
 ```
+  select Investors_Name,count(Startup_Name) as Startup_InvestedIn from dbo.startup_funding
+  where City_Location NOT IN (Select * from @tablevariable) 
+  group by Investors_Name,InvestmentType
+  having InvestmentType like 'Angel%' and Investors_Name is not Null  
+  order by Startup_InvestedIn desc
+  offset 1 row
+  fetch next 5 rows only
+  go  
 ```
 ## Goal_Statement_6
+### Max and Min investment out of all start-ups in India <br>
+``` JS
+  select max(Amount_in_USD) as Max_Amount_in_USD, 
+	min(Amount_in_USD) as Min_Amount_in_USD 
+	from dbo.startup_funding 
+	where [City_Location] NOT IN (
+	Select location from @tablevariable)
 ```
-```
-
 ## Contributors
 
 <table>
