@@ -64,6 +64,8 @@ The followings are the scope for this case study:
  ORDER BY Total_Amount DESC
 
 ```
+![image](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_1_Graph.png)
+
 ## Goal_Statement_2
 ### The pattern of fundings does start up generally gets in India<br>
 ``` JS
@@ -73,6 +75,7 @@ GROUP BY InvestmentType
 ORDER BY Total_Investment DESC;
 go
 ```
+![image](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_2_Graph.png)
 
 ## Goal_Statement_3
 ### Various sectors or industries which are more favoured by investors for funding<br>
@@ -83,6 +86,8 @@ GROUP BY Industry_Vertical
 ORDER BY Frequency DESC
 Go
 ```
+![image](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_3_Graph.png)
+
 ## Goal_Statement_4
 ### How funding has changed overtime
 
@@ -95,6 +100,8 @@ GROUP BY YEAR(Date_yyyy_mm_dd),MONTH(Date_yyyy_mm_dd)
 ORDER BY YEAR(Date_yyyy_mm_dd),MONTH(Date_yyyy_mm_dd)
 GO
 ```
+![image](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_4_Graph_Month.png)
+
 * **Yearwise**
 
 ``` JS
@@ -104,6 +111,7 @@ GROUP BY YEAR(Date_yyyy_mm_dd)
 ORDER BY YEAR(Date_yyyy_mm_dd)
 GO
 ```
+![image](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_4_Graph_Year.png)
 
 ## Goal_Statement_5
 ### Angel Investors of India <br>
@@ -117,6 +125,8 @@ GO
   fetch next 5 rows only
   go  
 ```
+![image](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_5_Graph.png)
+
 ## Goal_Statement_6
 ### Max and Min investment out of all start-ups in India <br>
 ``` JS
@@ -126,6 +136,8 @@ GO
 	where [City_Location] NOT IN (
 	Select location from @tablevariable)
 ```
+![image](https://github.com/Rajiv-Nayan/Startup-Funding-Analysis/blob/main/Assets/Goal%20Statement%20Graphs/Goal_6_Graph.png)
+
 ## Contributors
 
 <table>
