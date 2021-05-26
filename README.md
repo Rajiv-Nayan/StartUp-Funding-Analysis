@@ -107,7 +107,7 @@ GO
 
 ## Goal_Statement_5
 ### Angel Investors of India <br>
-```
+``` JS
   select Investors_Name,count(Startup_Name) as Startup_InvestedIn from dbo.startup_funding
   where City_Location NOT IN (Select * from @tablevariable) 
   group by Investors_Name,InvestmentType
